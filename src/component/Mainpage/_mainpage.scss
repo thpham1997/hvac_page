@@ -1,0 +1,26 @@
+.mainPage {
+  position: relative;
+  top: 4rem;
+  &__bgImage {
+    height: calc(100vh - 4rem);
+    background-image: url("../../img/pexels-sergei-akulich-2539462.jpg");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    & h1 {
+      color: white;
+      line-height: 4rem;
+      width: 40vw;
+      text-align: center;
+      font-family: "Lora", sans-serif;
+      font-size: italic;
+      font-size: 3rem;
+      font-weight: bolder;
+      background-color: rgba(0, 0, 0, 0.4);
+      border-radius: 0.2rem;
+    }
+  }
+}
