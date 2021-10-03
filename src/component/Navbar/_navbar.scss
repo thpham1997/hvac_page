@@ -1,0 +1,40 @@
+.navBar {
+  $navBgColor: hsl(174, 20%, 81%);
+  $navBgColorHover: hsl(174, 20%, 77%);
+  // ********
+  position: fixed;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  height: 4rem;
+  width: 100%;
+  background-color: $navBgColor;
+  & button {
+    margin: auto 3rem;
+    background-color: $navBgColor;
+    border: none;
+    &:hover,
+    &:hover * {
+      background-color: $navBgColorHover;
+      cursor: pointer;
+      font-weight: 900;
+    }
+  }
+
+  &__home {
+    height: 1.7rem;
+    width: 4rem;
+    border-radius: 0.2rem;
+  }
+  &__topics {
+    height: 1.7rem;
+    width: 4rem;
+    border-radius: 0.2rem;
+  }
+  &__user {
+    height: 2.7rem;
+    width: 2.7rem;
+    border-radius: 50%;
+  }
+}
