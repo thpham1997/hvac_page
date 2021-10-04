@@ -1,6 +1,10 @@
 .mainPage {
+  $mainBgColor: hsl(174, 20%, 81%);
+
+  //
   position: relative;
   top: 4rem;
+  z-index: -1;
   &__bgImage {
     height: calc(100vh - 4rem);
     background-image: url("../../img/pexels-sergei-akulich-2539462.jpg");
@@ -21,6 +25,31 @@
       font-weight: bolder;
       background-color: rgba(0, 0, 0, 0.4);
       border-radius: 0.2rem;
+    }
+  }
+
+  &__topicShortcut{
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    row-gap: 2rem;
+    margin: 2rem autox;
+    place-items: center;
+    .shortcut{
+      display: grid;
+      background-color: rgba(0, 0, 0, 0.1);
+      border-radius: 1rem;
+      box-shadow: 1px 1px 5px 1px rgba(0, 0, 0, .2);
+      width: 24rem;
+      height: 17rem;
+      overflow: hidden;
+      img{
+        align-self: center;
+        width: 14rem;
+        margin: 0.5rem auto;
+      }
+      p{
+        margin: auto 1rem;
+      }
     }
   }
 }
