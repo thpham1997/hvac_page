@@ -1,12 +1,12 @@
 
 .mainPage {
-  
+  $mainBgColor: hsl(174, 20%, 81%);
 
   //
   position: relative;
   top: 4.1rem;
   margin-bottom: 5rem;
-  z-index: -1;
+  background-color: hsl(174, 30%, 95%);
   &__bgImage {
     height: calc(100vh - 10rem);
     background-image: url("../../img/pexels-sergei-akulich-2539462.jpg");
@@ -50,19 +50,16 @@
         background-repeat: no-repeat;
         background-position: center;
         background-size: cover;
-        // align-self: center;
         width: 14rem;
         height: inherit;
-        // margin: 0.5rem auto;
       }
-      & a {
-        // width: 100%;
+      a {
         padding: 0.5rem;
         text-decoration: none;
         color: black;
         display: grid;
         grid-template-rows: 3fr 7fr;
-        & h1{
+        h1{
           text-decoration: underline;
           font-size: 1.3rem;
           font-family: 'Varela Round', sans-serif;
@@ -71,7 +68,7 @@
             font-weight: bold;
           }
         }
-        & p{
+        p{
           color: hsl(0, 0%, 30%);
           font-size: 1.1rem;
         }
