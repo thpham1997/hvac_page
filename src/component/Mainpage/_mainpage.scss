@@ -1,12 +1,14 @@
+
 .mainPage {
-  $mainBgColor: hsl(174, 20%, 81%);
+  
 
   //
   position: relative;
-  top: 4rem;
+  top: 4.1rem;
+  margin-bottom: 5rem;
   z-index: -1;
   &__bgImage {
-    height: calc(100vh - 4rem);
+    height: calc(100vh - 10rem);
     background-image: url("../../img/pexels-sergei-akulich-2539462.jpg");
     background-repeat: no-repeat;
     background-position: center;
@@ -17,7 +19,7 @@
     & h1 {
       color: white;
       line-height: 4rem;
-      width: 40vw;
+      width: 55vw;
       text-align: center;
       font-family: "Lora", sans-serif;
       font-size: italic;
@@ -28,27 +30,51 @@
     }
   }
 
-  &__topicShortcut{
+  &__topicShortcut {
     display: grid;
     grid-template-columns: repeat(1, 1fr);
     row-gap: 2rem;
-    margin: 2rem autox;
+    margin-top: 2rem;
     place-items: center;
-    .shortcut{
+    .shortcut {
       display: grid;
+      grid-template-columns: 1fr 2fr;
+      column-gap: 1rem;
       background-color: rgba(0, 0, 0, 0.1);
       border-radius: 1rem;
-      box-shadow: 1px 1px 5px 1px rgba(0, 0, 0, .2);
-      width: 24rem;
-      height: 17rem;
+      box-shadow: 1px 1px 5px 1px rgba(0, 0, 0, 0.1);
+      width: 45rem;
+      height: 15rem;
       overflow: hidden;
-      img{
-        align-self: center;
+      img {
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: cover;
+        // align-self: center;
         width: 14rem;
-        margin: 0.5rem auto;
+        height: inherit;
+        // margin: 0.5rem auto;
       }
-      p{
-        margin: auto 1rem;
+      & a {
+        // width: 100%;
+        padding: 0.5rem;
+        text-decoration: none;
+        color: black;
+        display: grid;
+        grid-template-rows: 3fr 7fr;
+        & h1{
+          text-decoration: underline;
+          font-size: 1.3rem;
+          font-family: 'Varela Round', sans-serif;
+          &::first-letter{
+            font-size: 3rem;
+            font-weight: bold;
+          }
+        }
+        & p{
+          color: hsl(0, 0%, 30%);
+          font-size: 1.1rem;
+        }
       }
     }
   }
