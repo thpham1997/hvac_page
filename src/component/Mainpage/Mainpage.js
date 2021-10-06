@@ -5,7 +5,7 @@ import Topicshortcut from './TopicShortcut';
 const Mainpage = () => {
   return (
     <div className='mainPage'>
-      <Backgroundheader class='mainPage__bgImage' header='THIS IS A TITLE'/>
+      <Backgroundheader class='mainPage__bgImage' header='HVAC Group-Working for The Best'/>
       <Topicshortcut class='mainPage__topicShortcut'/>
     </div>
   );
