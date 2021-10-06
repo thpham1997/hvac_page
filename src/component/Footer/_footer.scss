@@ -1,0 +1,22 @@
+.footer{
+  $mainBgColor: hsl(174, 20%, 81%);
+
+  // 
+  position: relative;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  background-color: $mainBgColor;
+  height: 3rem;
+
+  &__info1{
+    margin: auto 2rem;
+  }
+  &__info2{
+    margin: auto 2rem;
+    justify-self: center;
+  }
+  &__info3{
+    justify-self: flex-end;
+    margin: auto 2rem;
+  }
+}
