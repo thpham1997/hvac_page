@@ -5,8 +5,9 @@
   //
   position: relative;
   top: 4.1rem;
-  margin-bottom: 5rem;
+  margin-bottom: 4rem;
   background-color: hsl(174, 30%, 95%);
+  padding-bottom: 1rem;
   &__bgImage {
     height: calc(100vh - 10rem);
     background-image: url("../../img/pexels-sergei-akulich-2539462.jpg");
