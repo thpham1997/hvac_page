@@ -4,19 +4,66 @@
   // 
   position: relative;
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  background-color: $mainBgColor;
-  height: 3rem;
+  grid-template-rows: 3fr 3fr 1fr;
+  background-color: rgba(0, 0, 0, 0.1);
+  row-gap: 0.2rem;
+  height: 50vh;
 
-  &__info1{
-    margin: auto 2rem;
+  &__contactInfo{
+    background-color: rgba(255, 255, 255, 0.103);
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    justify-items: center;
+
+    & >*{
+      padding: 1rem;
+    }
+    .footer__phoneHeader {
+      & *{
+      display: inline-block;
+      }
+      & h1{
+        margin-left: 0.5rem;
+      }
+    }
+    .footer__phoneNumber{
+      margin-top: 0.5rem;
+      padding-left: 1.5rem;
+    }
+
+    .footer__emailHeader {
+      & *{
+      display: inline-block;
+      }
+      & h1{
+        margin-left: 0.5rem;
+      }
+    }
+    .footer__email > a{
+      display: block;
+      margin-top: 0.5rem;
+      padding-left: 1.7rem;
+      color: black;
+    }
+
+    .footer__hourHeader {
+      & *{
+      display: inline-block;
+      }
+      & h1{
+        margin-left: 0.5rem;
+      }
+    }
+    .footer__hour > p{
+      margin-top: 0.5rem;
+      padding-left: 1.5rem;
+    }
+
   }
-  &__info2{
-    margin: auto 2rem;
-    justify-self: center;
+  &__workingInfo{
+    background-color: hsl(325, 66%, 26%);
   }
-  &__info3{
-    justify-self: flex-end;
-    margin: auto 2rem;
+  &__designerInfo{
+    background-color: hsl(76, 20%, 81%);
   }
 }
