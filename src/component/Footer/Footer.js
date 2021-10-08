@@ -41,12 +41,6 @@ const Footer = (props) => {
           </p>
         </div>
         <div className='footer__service'>
-          <h1>HVAC GROUP</h1>
-          <p>14309 Wicklow Ln
-            <span>Laurel, MD 20707</span>
-          </p>
-        </div>
-        <div className='footer__address'>
           <h1>OUR SERVICES</h1>
           <ul>
             <li>Service 1</li>
@@ -56,7 +50,7 @@ const Footer = (props) => {
         </div>
       </div>
       <div className='footer__designerInfo'>
-        <a href='https://github.com/thpham1997' >
+        <a href='https://github.com/thpham1997' target='_blank'>
           <FontAwesomeIcon icon={faGithub}></FontAwesomeIcon>
           <p>Thanh Pham</p>
         </a>

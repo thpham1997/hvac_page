@@ -1,6 +1,6 @@
 .navBar {
   $navBgColor: hsl(174, 20%, 81%);
-  $navBgColorHover: hsl(174, 20%, 77%);
+  $navBgColorHover: hsl(174, 20%, 75%);
   // ********
   position: fixed;
   display: flex;
@@ -15,6 +15,7 @@
     margin: auto 3rem;
     background-color: $navBgColor;
     border: none;
+    transition: 0.5s;
     &:hover,
     &:hover * {
       background-color: $navBgColorHover;

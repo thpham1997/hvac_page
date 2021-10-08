@@ -1,45 +1,44 @@
-.footer{
-  $mainBgColor: hsl(174, 20%, 81%);
+.footer {
+  $mainColor: hsl(174, 20%, 81%);
 
-  // 
+  //
   position: relative;
   display: grid;
   grid-template-rows: 3fr 3fr 1fr;
   background-color: rgba(0, 0, 0, 0.1);
-  row-gap: 0.2rem;
-  height: 50vh;
+  row-gap: 0.1rem;
+  height: auto;
 
-  &__contactInfo{
+  &__contactInfo {
     background-color: rgba(255, 255, 255, 0.103);
     display: grid;
     grid-template-columns: repeat(3, 1fr);
+    column-gap: 1rem;
     justify-items: center;
+    padding: 1rem;
 
-    & >*{
-      padding: 1rem;
-    }
     .footer__phoneHeader {
-      & *{
-      display: inline-block;
+      & * {
+        display: inline-block;
       }
-      & h1{
+      & h1 {
         margin-left: 0.5rem;
       }
     }
-    .footer__phoneNumber{
+    .footer__phoneNumber {
       margin-top: 0.5rem;
       padding-left: 1.5rem;
     }
 
     .footer__emailHeader {
-      & *{
-      display: inline-block;
+      & * {
+        display: inline-block;
       }
-      & h1{
+      & h1 {
         margin-left: 0.5rem;
       }
     }
-    .footer__email > a{
+    .footer__email > a {
       display: block;
       margin-top: 0.5rem;
       padding-left: 1.7rem;
@@ -47,23 +46,67 @@
     }
 
     .footer__hourHeader {
-      & *{
-      display: inline-block;
+      & * {
+        display: inline-block;
       }
-      & h1{
+      & h1 {
         margin-left: 0.5rem;
       }
     }
-    .footer__hour > p{
+    .footer__hour > p {
       margin-top: 0.5rem;
       padding-left: 1.5rem;
     }
-
   }
-  &__workingInfo{
-    background-color: hsl(325, 66%, 26%);
+  &__workingInfo {
+    background-color: hsl(177, 29%, 59%);
+    display: grid;
+    justify-items: center;
+    grid-template-columns: repeat(2, 1fr);
+    column-gap: 1rem;
+    padding: 1rem;
+    .footer__address {
+      & > h1 {
+        margin-left: 20%;
+      }
+      & > p {
+        margin-left: 20%;
+        margin-top: 1rem;
+        width: max-content;
+        & > span {
+          margin-top: 0.2rem;
+          display: block;
+        }
+      }
+    }
+    .footer__service {
+      & > h1 {
+        margin-left: 20%;
+        width: max-content;
+      }
+      & > ul {
+        margin-left: 20%;
+        margin-top: 1rem;
+        & li {
+          text-decoration: underline;
+          margin-bottom: 0.2rem;
+        }
+      }
+    }
   }
-  &__designerInfo{
+  &__designerInfo {
     background-color: hsl(76, 20%, 81%);
+    padding: 1rem;
+    display: grid;
+    place-items: center;
+    & > a {
+      & > svg {
+        margin-right: 0.2rem;
+      }
+      & > p {
+        margin-left: 0.2rem;
+        display: inline-block;
+      }
+    }
   }
 }
