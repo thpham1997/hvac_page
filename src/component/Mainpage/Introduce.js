@@ -1,6 +1,6 @@
 
 import React from 'react'
-import worker from '../../img/worker.jpeg'
+import worker from '../../img/worker1.jpg'
 import { Link } from 'react-router-dom'
 export default function Introduce(props) {
   return (
