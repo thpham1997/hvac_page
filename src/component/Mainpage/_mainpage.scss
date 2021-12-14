@@ -207,24 +207,24 @@
       -moz-transition: all ease-out 0.4s;
       visibility: hidden;
       opacity: 0;
-      & span{
+      & span {
         display: inline-block;
         font-size: 3rem;
         font-weight: bold;
         margin-bottom: 3rem;
       }
-      & h2{
+      & h2 {
         font-size: 1.5rem;
         line-height: 1.6rem;
         margin-bottom: 2rem;
       }
-      & p{
+      & p {
         font-size: 1.1rem;
         line-height: 1.2rem;
         margin-bottom: 2rem;
         padding-right: 0.5rem;
       }
-      & a{
+      & a {
         color: #fff;
         border-bottom: 2px solid #f59758;
         text-decoration: none;
@@ -246,7 +246,7 @@
     opacity: 0;
   }
 
-  &__works .singleWork:hover::after{
+  &__works .singleWork:hover::after {
     visibility: visible;
     opacity: 1;
   }
@@ -255,5 +255,81 @@
     visibility: visible;
     opacity: 1;
     bottom: 30%;
+  }
+
+  &__members {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    column-gap: 1rem;
+    row-gap: 2rem;
+    padding: 5rem 3rem;
+
+    & .description {
+      position: relative;
+      & h2 {
+        font-size: 2.8rem;
+        line-height: 3.5rem;
+        font-weight: bolder;
+        color: #2c234d;
+      }
+      & p {
+        font-size: 1.2rem;
+        line-height: 1.8rem;
+        margin-top: 4rem;
+        text-align: justify;
+        color: #2c234d;
+      }
+      & a {
+        display: inline-block;
+        position: relative;
+        text-decoration: none;
+        color: white;
+        background-color: #2c234d;
+        width: 10rem;
+        line-height: 3rem;
+        text-align: center;
+        font-size: 1.2rem;
+        margin-top: 20rem;
+        margin-left: 3rem;
+      }
+      & a::before {
+        content: "";
+        width: 10rem;
+        height: 3rem;
+        position: absolute;
+        background: $mainColor;
+        top: 10px;
+        left: -8px;
+        z-index: -1;
+        transition: all ease-out 0.3s;
+      }
+      & a:hover::before {
+        top: -10px;
+      }
+    }
+    & .singleMember {
+      z-index: 0;
+      position: relative;
+      & img {
+        display: block;
+        width: 100%;
+        object-fit: cover;
+      }
+
+      &__info {
+        position: absolute;
+        bottom: 3rem;
+        left: 3rem;
+        color: #fff;
+        & h2 {
+          font-size: 2.5rem;
+          font-weight: bolder;
+          margin-bottom: 2rem;
+        }
+        & h3 {
+          font-size: 1.5rem;
+        }
+      }
+    }
   }
 }
