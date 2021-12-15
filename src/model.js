@@ -39,7 +39,7 @@ export const createUser = async (fullName, email, userName, password) => {
     )
     if (data.fullName === 'BadRequest') return;
   } catch (error) {
-    return error;
+    return;
   }
   
   // console.log(data);
@@ -141,7 +141,7 @@ export const createPost = async (title, body, avatar, authorId, tags) => {
 export const getPosts = async () => {
   let allPosts = await client.query(
     q.Map(
-      q.Paginate(q.Documents(q.Collection("posts"))),
+      q.Paginate(q.Documents(q.Collection("blogs"))),
       q.Lambda("X", q.Get(q.Var("X")))
     )
   )
