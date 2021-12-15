@@ -4,6 +4,7 @@ import Backgroundheader from './BackgroundHeader'
 import Topicshortcut from './TopicShortcut';
 import Introduce from './Introduce';
 import OurWork from './OurWork';
+import Members from './Members';
 const Mainpage = () => {
   return (
     <div className='mainPage'>
@@ -11,6 +12,7 @@ const Mainpage = () => {
       {/* <Topicshortcut class='mainPage__topicShortcut'/> */}
       <Introduce parentName='mainPage'></Introduce>
       <OurWork parentName='mainPage'></OurWork>
+      <Members parentName='mainPage'></Members>
     </div>
   );
 }
