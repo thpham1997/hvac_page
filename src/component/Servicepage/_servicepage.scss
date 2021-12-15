@@ -1,0 +1,88 @@
+.servicePage {
+  $mainBgColor: #c5d8d6;
+  $mainColor: #f27420;
+  $secondaryColor: #2c234d;
+  //
+  position: relative;
+  top: 4.1rem;
+  margin-bottom: 4rem;
+  background-color: hsl(174, 30%, 95%);
+  padding-bottom: 10rem;
+  z-index: 0;
+  &__headerImg {
+    // overflow: hidden;
+    height: 70vh;
+    background-image: url("../../img/headerImage.jpg");
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    & h2 {
+      width: 100%;
+      line-height: 40vh;
+      background-color: rgba(0, 0, 0, 0.4);
+      color: #fff;
+      font-size: 3rem;
+      font-weight: bolder;
+      text-align: center;
+    }
+  }
+
+  &__services {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    margin-top: 30vh;
+  }
+  &__icon {
+    margin-top: 2rem;
+    & svg {
+      font-size: 3rem;
+      color: $mainColor;
+    }
+  }
+  &__singleService {
+    background-color: #fff;
+    padding: 2rem 5rem;
+    position: relative;
+    transition: all ease-out 0.3s;
+    & h2 {
+      font-size: 2rem;
+      font-weight: bold;
+      margin-top: 1.5rem;
+    }
+    & p {
+      line-height: 1.4rem;
+      font-size: 1.1rem;
+      color: #6e6e6e;
+      margin-top: 1.5rem;
+      margin-bottom: 4rem;
+    }
+    & a {
+      position: absolute;
+      right: 0;
+      bottom: 0;
+      width: 3rem;
+      height: 3rem;
+      background-color: $mainColor;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      transition: all ease-out 0.3s;
+      & svg {
+        font-size: 2rem;
+        color: #fff;
+      }
+    }
+    & a:hover{
+      background-color: $secondaryColor;
+    }
+  }
+
+  
+
+  &__singleService:hover{
+    background-color: hsl(0, 0%, 98%);
+  }
+}
