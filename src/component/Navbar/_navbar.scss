@@ -1,42 +1,116 @@
 .navBar {
-  $navBgColor: hsl(174, 20%, 81%);
-  $navBgColorHover: hsl(174, 20%, 75%);
-  // ********
+  $mainColor: #f27420;
+  $secondaryColor: #2c234d;
+
+
   position: fixed;
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: center;
-  height: 4rem;
-  width: 100%;
-  background-color: $navBgColor;
   z-index: 1;
-  & button {
-    margin: auto 3rem;
-    background-color: $navBgColor;
-    border: none;
-    transition: 0.5s;
-    &:hover,
-    &:hover * {
-      background-color: $navBgColorHover;
-      cursor: pointer;
-      font-weight: 900;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-direction: row;
+  width: 100%;
+  height: 4rem;
+  background-color: #fff;
+  padding: 0 5rem;
+  &__brandname {
+    text-decoration: none;
+    color: black;
+    text-transform: uppercase;
+    font-size: 1.5rem;
+    font-weight: bolder;
+    color: $mainColor;
+    line-height: 4rem;
+  }
+
+  &__list {
+    display: flex;
+    column-gap: 2rem;
+    justify-content: flex-end;
+    width: 50%;
+    color: $secondaryColor;
+    font-size: 1.1rem;
+    font-weight: bold;
+    & li{
+      list-style: none;
+      & a{
+        text-decoration: none;
+        // color: black;
+      }
     }
   }
 
-  &__home {
-    height: 1.7rem;
-    width: 4rem;
-    border-radius: 0.2rem;
+  & > svg {
+    position: absolute;
+    right: 2rem;
+    top: 1.25rem;
+    display: none;
+    transition-delay: 2s;
   }
-  &__topics {
-    height: 1.7rem;
-    width: 4rem;
-    border-radius: 0.2rem;
+}
+
+.active > a {
+  text-decoration: none;
+  color: green;
+}
+
+@media screen and (max-width: 600px) {
+  .navBar {
+    &__brandname {
+      background-color: rgb(189, 223, 211);
+      margin-left: 2rem;
+    }
+    &__list {
+      background-color: rgb(189, 223, 211);
+      position: absolute;
+      top: 4rem;
+      right: 0rem;
+      width: 30%;
+      min-width: 12rem;
+      height: 96vh;
+      flex-direction: column;
+      justify-content: flex-start;
+      align-items: center;
+      transform: translateX(100%);
+      transition: transform 0.4s ease-in;
+      & li {
+        margin: 1.5rem auto;
+        opacity: 0;
+        & a {
+          text-decoration: none;
+          color: black;
+          font-size: 1.4rem;
+        }
+      }
+    }
   }
-  &__user {
-    height: 2.7rem;
-    width: 2.7rem;
-    border-radius: 50%;
+  .navBar svg {
+    display: block;
+    &:hover {
+      cursor: pointer;
+    }
+  }
+
+  .navBarListToggle{
+    transform: translateX(0%);
+  }
+}
+
+.liToggle{
+    animation-name: listAnimation;
+    animation-duration: 0.3s;
+    animation-iteration-count: 1;
+    animation-direction: normal;
+    animation-timing-function: ease-in;
+    animation-fill-mode: forwards;
+}
+
+@keyframes listAnimation{
+  from{
+    transform: translateX(50px);
+    opacity: 0;
+  }to{
+    transform: translateX(0);
+    opacity: 1;
   }
 }
