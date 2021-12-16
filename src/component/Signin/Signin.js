@@ -1,10 +1,12 @@
 import React from 'react'
 import { useRef } from 'react';
 import { useHistory } from 'react-router'
+import { Link } from 'react-router-dom';
 import { loginUser } from '../../model';
 import './_signin.scss';
 export default function Signin() {
   let history = useHistory();
+
   if (localStorage.getItem("userId")) {
     history.push('/');
   }
@@ -39,19 +41,30 @@ export default function Signin() {
       }
     }
   }
+
+  function handleSignUpClick() {
+    window.scroll({
+      top: 0,
+      left: 0,
+      behavior: 'smooth'
+    })
+  }
   return (
     <form className="form-signin">
-      <div className="form__group">
-        <label className="form__label">Email address: </label>
-        <input ref={email} type="email" className="form__input" placeholder="Enter email" />
+      <div className="form-signin__group">
+        <label className="form-signin__label">Email address: </label>
+        <input ref={email} type="email" className="form-signin__input" placeholder="Enter Email" autoFocus={true} required={true} />
       </div>
-      <div className="form__group">
-        <label className="form__label">Password: </label>
-        <input ref={password} type="password" className="form__input" placeholder="Password" />
+      <div className="form-signin__group">
+        <label className="form-signin__label">Password: </label>
+        <input ref={password} type="password" className="form-signin__input" placeholder="Enter Password" required={true} />
       </div>
-      <div className="form__group">
-        {/* <div className="col-sm-5"></div> */}
-        <button onClick={LoginUser} type="submit" className="form__button">Signin</button>
+      <div className="form-signin__group">
+        <button onClick={LoginUser} type="submit" className="form-signin__button">LOG IN</button>
+      </div>
+      <hr />
+      <div className="form-signin__group">
+        <Link to='/signup' onClick={handleSignUpClick}>Sign Up</Link>
       </div>
     </form>
   )
