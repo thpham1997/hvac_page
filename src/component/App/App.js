@@ -2,6 +2,9 @@ import './_app.scss'
 import { BrowserRouter, Route, Switch } from 'react-router-dom';
 import Navbar from '../Navbar/Navbar';
 import Mainpage from '../Mainpage/Mainpage';
+import Aboutpage from '../Aboutpage/Aboutpage';
+import Servicepage from '../Servicepage/Servicepage';
+import Workpage from '../Workpage/Workpage';
 import Blog from '../Blog/Blog';
 import Signin from '../Signin/Signin';
 import Signout from '../Signout/Signout';
@@ -19,6 +22,9 @@ function App() {
       {/* <Test /> */}
       <Switch>
         <Route exact path='/' component={Mainpage} />
+        <Route exact path='/about' component={Aboutpage} />
+        <Route exact path='/services' component={Servicepage} />
+        <Route exact path='/works' component={Workpage} />
         <Route path='/blogs/:id' component={Blog} />
         <Route exact path='/signin/' component={Signin} />
         <Route exact path='/signup' component={Signup} />
