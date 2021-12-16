@@ -75,17 +75,25 @@ const Navbar = () => {
     console.log(isLoggedIn);
   }, [localStorage.getItem('userId')])
 
+  
+  function handleClick() {
+    window.scroll({
+      top: 0,
+      left: 0,
+      behavior: 'smooth'
+    })
+  }
   return (
     <div className='navBar'>
-      <Link className="navBar__brandname" to='/'>HVAC Blog</Link>
+      <Link className="navBar__brandname" to='/' onClick={handleClick}>HVAC Blog</Link>
       <ul className="navBar__list">
-        <li className="navBar__home"><Link to="/">Home</Link></li>
-        <li className="navBar__about"><Link to="/about">About</Link></li>
-        <li className="navBar__services"><Link to="/services">Services</Link></li>
-        <li className="navBar__works"><Link to="/works">Works</Link></li>
-        <li className="navBar__blogs"><Link to="/blogs">Blogs</Link></li>
-        <li className="navBar__signin"><Link to="/signin">Sign In</Link></li>
-        <li className="navBar__signup"><Link to="/signup">Sign Up</Link></li>
+        <li className="navBar__home" ><Link to="/" onClick={handleClick}>Home</Link></li>
+        <li className="navBar__about" ><Link to="/about" onClick={handleClick}>About</Link></li>
+        <li className="navBar__services" ><Link to="/services" onClick={handleClick}>Services</Link></li>
+        <li className="navBar__works" ><Link to="/works" onClick={handleClick}>Works</Link></li>
+        <li className="navBar__blogs" ><Link to="/blogs" onClick={handleClick}>Blogs</Link></li>
+        <li className="navBar__signin" ><Link to="/signin" onClick={handleClick}>Sign In</Link></li>
+        <li className="navBar__signup" ><Link to="/signup" onClick={handleClick}>Sign Up</Link></li>
       </ul>
       <FontAwesomeIcon icon={faBars} />
     </div>
