@@ -65,7 +65,7 @@ export const getUser = async (userId) => {
     return user;
 
   } catch {
-    return {};
+    return;
   }
 }
 
@@ -86,9 +86,9 @@ export const loginUser = async (email, password) => {
     // console.log(user);
     if (bcrypt.compareSync(password, user.data.password))
       return user;
-    else return {};
+    else return;
   } catch (error) {
-    return { message: "undifined user" };
+    return;
   }
 }
 
