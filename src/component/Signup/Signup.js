@@ -45,29 +45,29 @@ export default function Signup() {
 
   return (
     <form className="form-signup">
-      <div className="form__group">
-        <label className="form__label">Name: </label>
-        <input ref={name} type="text" className="form__input" placeholder="Enter Name" />
+      <div className="form-signup__group">
+        <label className="form-signup__label">Name: </label>
+        <input ref={name} type="text" className="form-signup__input" placeholder="Enter Name" />
       </div>
-      <div className="form__group">
-        <label className="form__label">Email address</label>
-        <input ref={email} type="email" className="form__input" placeholder="Enter email" />
+      <div className="form-signup__group">
+        <label className="form-signup__label">Email address</label>
+        <input ref={email} type="email" className="form-signup__input" placeholder="Enter email" />
       </div>
-      <div className="form__group">
-        <label className="form__label">Username: </label>
-        <input ref={username} type="text" className="form__input" placeholder="Enter username" />
+      <div className="form-signup__group">
+        <label className="form-signup__label">Username: </label>
+        <input ref={username} type="text" className="form-signup__input" placeholder="Enter username" />
       </div>
-      <div className="form__group">
-        <label className="form__label">Password</label>
-        <input ref={password} type="password" className="form__input" placeholder="Password" />
+      <div className="form-signup__group">
+        <label className="form-signup__label">Password</label>
+        <input ref={password} type="password" className="form-signup__input" placeholder="Password" />
       </div>
-      <div className="form__group">
-        <label className="form__label">Confirm Password</label>
-        <input ref={confirm_password} type="password" className="form__input" placeholder="Password" />
+      <div className="form-signup__group">
+        <label className="form-signup__label">Confirm Password</label>
+        <input ref={confirm_password} type="password" className="form-signup__input" placeholder="Password" />
       </div>
-      <div className="form__group">
+      <div className="form-signup__group">
         {/* <div className="col-sm-5"></div> */}
-        <button onClick={loginUser} type="submit" className="form__button">Signup</button>
+        <button onClick={loginUser} type="submit" className="form-signup__button">Sign Up</button>
       </div>
     </form>
   )
