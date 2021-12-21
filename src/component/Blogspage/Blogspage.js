@@ -35,11 +35,12 @@ export default function Blogspage() {
             blogs.map((b, id) => {
               let data = b.data;
               let author = b.data.author;
+              let postId = b.ref['@ref'].id;
               console.log(data, author);
               return (
                 <Blogreview
                   key={id}
-                  id={author.id}
+                  id={postId}
                   title={data.title}
                   author={author}
                   avatar={data.avatar}
