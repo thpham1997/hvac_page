@@ -7,7 +7,7 @@ import './_blog.scss';
 export default function Blog() {
   const { id } = useParams();
   const [blogData, setBlogData] = useState({});
-
+  const [paragraphs, setParagraphs] = useState({});
   const handleUpvote = async e => {
     let blog = await upvotePost(blogData.upvote + 1, id);
     setBlogData(blog);
@@ -18,29 +18,70 @@ export default function Blog() {
     setBlogData(blog);
   }
 
+  function HeaderImg(props) {
+
+    return (
+      <div className={`${props.parentName}__headerImg`}
+        style={{
+          backgroundImage: `url(${props.source})`
+        }}
+      >
+        <h2>{props.title}</h2>
+      </div>
+    )
+  }
+  // get post data
   useEffect(() => {
-    let data = {};
-    getPost(id).then(res => data = Object.assign({}, res.data));
-    setBlogData(data);
-  }, [id, blogData])
+    getPost(id).then(res => {
+      setBlogData(cur => cur = JSON.parse(JSON.stringify(res)));
+      console.log(blogData);
+    }, rej => {
+      console.log(rej);
+    }
+    );
+  }, [id])
+
+  // get text content of the blogs
+  useEffect(() => {
+    getPost(id).then(res => {
+      setParagraphs(cur => cur = JSON.parse(JSON.stringify(res.body)));
+      console.log(paragraphs);
+    }, rej => {
+      console.log(rej);
+    }
+    );
+  }, [id])
+
+
   return (
     <div className="blog">
-      <img src={blogData.avatar} width="100%" height="400px" alt="" />
-      <h1>{blogData.title}</h1>
-      <span >{blogData.author && `Post by ${blogData.author.username}`} on {blogData.created__at}</span>
-      <hr />
-      <div dangerouslySetInnerHTML={{ __html: blogData.body }}></div>
-      <hr />
-      <div>
-        <button
-          onClick={handleUpvote}>
-          <FontAwesomeIcon icon={faThumbsUp} />
-        </button> {blogData.upvote}
-        {/* <span style={{ margin: "10px" }}></span> */}
-        <button
-          onClick={handleDownvote}>
-          <FontAwesomeIcon icon={faThumbsDown} />
-        </button>{blogData.downvote}
+      <HeaderImg title={blogData.title}
+        parentName="blog"
+        source={blogData.avatar}
+      />
+      <div className="blog__body">
+        <h1>{blogData.title}</h1>
+        <span >{blogData.author && `Post by ${blogData.author.username}`} on {blogData.created__at}</span>
+        <hr />
+        <img src={blogData.avatar} alt="Blog Image"></img>
+        {Object.values(paragraphs).map((par, id) => {
+          return (
+            <p key={id} >{par}</p>
+          )
+        })}
+        <hr />
+        <div className="blog__control">
+          <button
+            onClick={handleUpvote}>
+            <FontAwesomeIcon icon={faThumbsUp} />
+          </button>
+          <p>{blogData.upvote}</p>
+          <button
+            onClick={handleDownvote}>
+            <FontAwesomeIcon icon={faThumbsDown} />
+          </button>
+          <p>{blogData.downvote}</p>
+        </div>
       </div>
     </div>
   )
