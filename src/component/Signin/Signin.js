@@ -50,22 +50,24 @@ export default function Signin() {
     })
   }
   return (
-    <form className="form-signin">
-      <div className="form-signin__group">
-        <label className="form-signin__label">Email address: </label>
-        <input ref={email} type="email" className="form-signin__input" placeholder="Enter Email" autoFocus={true} required={true} />
-      </div>
-      <div className="form-signin__group">
-        <label className="form-signin__label">Password: </label>
-        <input ref={password} type="password" className="form-signin__input" placeholder="Enter Password" required={true} />
-      </div>
-      <div className="form-signin__group">
-        <button onClick={LoginUser} type="submit" className="form-signin__button">LOG IN</button>
-      </div>
-      <hr />
-      <div className="form-signin__group">
-        <Link to='/signup' onClick={handleSignUpClick}>Sign Up</Link>
-      </div>
-    </form>
+    <div className='form-signin-container'>
+      <form className="form-signin">
+        <div className="form-signin__group">
+          <label className="form-signin__label">Email address: </label>
+          <input ref={email} type="email" className="form-signin__input" placeholder="Enter Email" autoFocus={true} required={true} />
+        </div>
+        <div className="form-signin__group">
+          <label className="form-signin__label">Password: </label>
+          <input ref={password} type="password" className="form-signin__input" placeholder="Enter Password" required={true} />
+        </div>
+        <div className="form-signin__group">
+          <button onClick={LoginUser} type="submit" className="form-signin__button">LOG IN</button>
+        </div>
+        <hr />
+        <div className="form-signin__group">
+          <Link to='/signup' onClick={handleSignUpClick}>Sign Up</Link>
+        </div>
+      </form>
+    </div>
   )
 }
