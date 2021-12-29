@@ -5,7 +5,8 @@ import ClassicEditor from '@ckeditor/ckeditor5-build-classic'
 import { CKEditor } from '@ckeditor/ckeditor5-react'
 import { useHistory } from "react-router";
 import axios from "axios";
-import {config} from 'dotenv'
+import { config } from 'dotenv'
+import './_createblog.scss'
 
 
 config();
@@ -28,6 +29,9 @@ export default function Createblog() {
 
   const handleCreate = async (e) => {
     e.preventDefault();
+    console.log(content);
+    console.log(avatar.current.value);
+    // document.querySelector('.createblog').innerHTML += content;
     if (!title.current.value || !tags.current.value || !avatar.current.value) {
       alert('You need to add title, body and upload the avatar')
     } else {
@@ -37,47 +41,64 @@ export default function Createblog() {
       history.push('/')
     }
   }
+
+  function HeaderImg(props) {
+    return (
+      <div className={`${props.parentName}__headerImg`}>
+        <h2>CREATE POST</h2>
+      </div>
+    )
+  }
+
+  const ckeditorConfig = {
+    // removePlugins: ['Blockquote', 'Image', 'List'],
+    toolbar: ['heading', '|', 'bold', 'italic', 'link', 'bulletedList', 'numberedList', 'blockQuote'],
+    
+  }
   return (
-    <form className="form-createblog">
-      <div className="form__group">
-        <label className="form__label" >Upload avatar</label>
-        <input type="file" className="form__input" id="" ref={avatar} />
-      </div>
-      <div className="form__group">
-        <label className="form__label" htmlFor="title">Title</label>
-        <input className="form__input" ref={title} type="text" id="" />
-      </div>
-      <div>
-        <label className="form__label" >Tags</label>
-        <input className="form__input" ref={tags} type="text" />
-        {/* <div className="col-sm-4"></div> */}
-      </div>
-      <br /><br /><br />
-      <div className="form__group">
-        <CKEditor
-          editor={ClassicEditor}
-          data={content}
-          row={100}
-          onReady={editor => { }}
-          onChange={(event, editor) => {
-            const data = editor.getData();
-            setContent(data)
-          }}
-        />
-      </div>
-      <div className="form__group">
-        {/* <div className="col-sm-5"></div> */}
-        <button onClick={handleCreate} type="submit" className="form__button">Submit</button>
-      </div>
-    </form>
+    <div className='createblog'>
+      <HeaderImg parentName='createblog'></HeaderImg>
+      <form className="form-createblog">
+        <div className="form-createblog__group">
+          <label className="form-createblog__label" >Upload Image: </label>
+          <input type="file" className="form-createblog__input" ref={avatar} />
+        </div>
+        <div className="form-createblog__group">
+          <label className="form-createblog__label" htmlFor="title">Title</label>
+          <input className="form-createblog__input" ref={title} type="text" placeholder="Post's title" required/>
+        </div>
+        <div className="form-createblog__group">
+          <label className="form-createblog__label" >Tags</label>
+          <input className="form-createblog__input" ref={tags} type="text" placeholder='Separate tags by ","' required/>
+          {/* <div className="col-sm-4"></div> */}
+        </div>
+        <br /><br />
+        <div className="form-createblog__group">
+          <CKEditor
+            editor={ClassicEditor}
+            data={content}
+            config={ckeditorConfig}
+            onReady={editor => { console.log(editor) }}
+            onChange={(event, editor) => {
+              const data = editor.getData();
+              setContent(data)
+            }}
+          />
+        </div>
+        <div className="form-createblog__group">
+          {/* <div className="col-sm-5"></div> */}
+          <button onClick={handleCreate} type="submit" className="form-createblog__button">Submit</button>
+        </div>
+      </form>
+    </div>
   )
 }
 
 const uploadFile = async (file) => {
   const url = `https://api.cloudinary.com/v1_1/${process.env.REACT_APP_CLOUD_NAME}/image/upload`;
-  const timeStamp = Date.now()/1000;
+  const timeStamp = Date.now() / 1000;
   let formData = new FormData()
-  formData.append("api_key",process.env.REACT_APP_CLOUDINARY_API_KEY);
+  formData.append("api_key", process.env.REACT_APP_CLOUDINARY_API_KEY);
   formData.append("file", file);
   formData.append("public_id", "sample_image");
   formData.append("timestamp", timeStamp);

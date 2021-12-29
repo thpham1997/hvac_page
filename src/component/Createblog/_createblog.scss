@@ -1,0 +1,81 @@
+$mainBgColor: #c5d8d6;
+$mainColor: #f27420;
+$secondaryColor: #2c234d;
+.createblog {
+  //
+  position: relative;
+  top: 4.1rem;
+  margin-bottom: 4rem;
+  background-color: hsl(174, 30%, 95%);
+  padding-bottom: 20rem;
+  z-index: 0;
+  &__headerImg {
+    height: 60vh;
+    background-image: url("../../img/headerImage.jpg");
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    & h2 {
+      width: 100%;
+      line-height: 60vh;
+      background-color: rgba(0, 0, 0, 0.4);
+      color: #fff;
+      font-size: 3rem;
+      font-weight: bolder;
+      text-align: center;
+    }
+  }
+}
+
+.form-createblog {
+  grid-template-columns: repeat(3, 1fr);
+  padding: 3rem;
+  background-color: #e6e6e6;
+  width: 60%;
+  margin: 1rem auto;
+  margin-top: 40vh;
+  margin-bottom: 40vh;
+  border-radius: 3px;
+  box-shadow: 2px 2px 13px rgba(0, 0, 0, 0.4);
+  &__group {
+    margin: 1rem auto;
+    & * {
+      display: block;
+    }
+  }
+  &__label {
+    font-size: 1.5rem;
+    line-height: 1.7rem;
+    font-weight: bold;
+    margin-bottom: 0.5rem;
+    margin-left: 0.5rem;
+  }
+  &__input {
+    font-size: 1.4rem;
+    line-height: 1.6rem;
+  }
+  &__button {
+    margin: 0 auto;
+    margin-top: 1rem;
+    font-size: 2rem;
+    line-height: 2.2rem;
+    font-weight: bold;
+    padding: 0.5rem;
+    color: $mainColor;
+    background-color: $secondaryColor;
+    border: none;
+    border-radius: 0.2rem;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
+    transition: all ease-out 0.2s;
+    &:hover {
+      cursor: pointer;
+      box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.4);
+      color: $secondaryColor;
+      background-color: $mainColor;
+      border-radius: 0.3rem;
+    }
+  }
+}
