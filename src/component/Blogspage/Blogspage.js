@@ -9,11 +9,11 @@ export default function Blogspage() {
   useEffect(() => {
     getPosts().then(res => {
       // setBlogs(JSON.parse(JSON.stringify(res.data)))
-      console.log(res.data);
+      // console.log(res.data);
       setBlogs(cur => cur = JSON.parse(JSON.stringify(res.data)));
-      console.log(blogs);
+      // console.log(blogs);
     }, rej => {
-      console.log(rej);
+      // console.log(rej);
     })
   }, [])
 
@@ -28,7 +28,7 @@ export default function Blogspage() {
   return (
     <div className='blogsPage'>
       <HeaderImg parentName='blogsPage'></HeaderImg>
-      {console.log(blogs)}
+      {/* {console.log(blogs)} */}
       {
         <div className='blogsPage__reviews'>
           {
@@ -36,7 +36,7 @@ export default function Blogspage() {
               let data = b.data;
               let author = b.data.author;
               let postId = b.ref['@ref'].id;
-              console.log(data, author);
+              // console.log(data, author);
               return (
                 <Blogreview
                   key={id}
