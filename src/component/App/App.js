@@ -6,6 +6,7 @@ import Aboutpage from '../Aboutpage/Aboutpage';
 import Servicepage from '../Servicepage/Servicepage';
 import Workpage from '../Workpage/Workpage';
 import Blog from '../Blog/Blog';
+import Blogspage from '../Blogspage/Blogspage';
 import Signin from '../Signin/Signin';
 import Signout from '../Signout/Signout';
 import Signup from '../Signup/Signup';
@@ -25,7 +26,8 @@ function App() {
         <Route exact path='/about' component={Aboutpage} />
         <Route exact path='/services' component={Servicepage} />
         <Route exact path='/works' component={Workpage} />
-        <Route path='/blogs/:id' component={Blog} />
+        <Route exact path='/blogs/:id' component={Blog} />
+        <Route exact path='/blogs' component={Blogspage} />
         <Route exact path='/signin/' component={Signin} />
         <Route exact path='/signup' component={Signup} />
         <Route exact path='/create/' component={Createblog} />
