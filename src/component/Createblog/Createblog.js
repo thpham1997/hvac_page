@@ -53,7 +53,21 @@ export default function Createblog() {
   const ckeditorConfig = {
     // removePlugins: ['Blockquote', 'Image', 'List'],
     toolbar: ['heading', '|', 'bold', 'italic', 'link', 'bulletedList', 'numberedList', 'blockQuote'],
-    
+    link: {
+      defaultProtocol: 'http://',
+      decorators: {
+        openInNewTab: {
+          mode: 'manual',
+          label: 'Open in a new tab',
+          defaultValue: true,			// This option will be selected by default.
+          attributes: {
+            target: '_blank',
+            rel: 'noopener noreferrer'
+          }
+        }
+      }
+    }
+
   }
   return (
     <div className='createblog'>
@@ -65,11 +79,11 @@ export default function Createblog() {
         </div>
         <div className="form-createblog__group">
           <label className="form-createblog__label" htmlFor="title">Title</label>
-          <input className="form-createblog__input" ref={title} type="text" placeholder="Post's title" required/>
+          <input className="form-createblog__input" ref={title} type="text" placeholder="Post's title" required />
         </div>
         <div className="form-createblog__group">
           <label className="form-createblog__label" >Tags</label>
-          <input className="form-createblog__input" ref={tags} type="text" placeholder='Separate tags by ","' required/>
+          <input className="form-createblog__input" ref={tags} type="text" placeholder='Separate tags by ","' required />
           {/* <div className="col-sm-4"></div> */}
         </div>
         <br /><br />
