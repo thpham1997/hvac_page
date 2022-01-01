@@ -1,0 +1,59 @@
+.notfoundPage {
+  $mainBgColor: #333;
+  $mainColor: #f27420;
+  $secondaryColor: #2c234d;
+  //
+  position: relative;
+  top: 4.1rem;
+  margin-bottom: 4rem;
+  background-color: hsl(174, 30%, 95%);
+  // padding-bottom: 20rem;
+  z-index: 0;
+  &__headerImg {
+    height: 60vh;
+    background-image: url("../../img/headerImage.jpg");
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    & h2 {
+      width: 100%;
+      line-height: 60vh;
+      background-color: rgba(0, 0, 0, 0.3);
+      color: #fff;
+      font-size: 3rem;
+      font-weight: bolder;
+      text-align: center;
+    }
+  }
+  &__body {
+    padding: 40vh 5rem;
+    background-color: $mainBgColor;
+  }
+  & svg {
+    display: block;
+    font-size: 10rem;
+    margin: 0 auto;
+    color: #f27420;
+  }
+  & a {
+    display: block;
+    font-size: 3rem;
+    width: max-content;
+    line-height: 4rem;
+    text-decoration: none;
+    color: #555;
+    margin: 0 auto;
+    margin-top: 3rem;
+    transition: all ease-out 0.3s;
+    &:hover {
+      color: #f27420;
+      font-size: 3.2rem;
+      font-style: italic;
+      background-color: rgba(0, 0, 0, 0.1);
+      border-radius: 0.2rem;
+    }
+  }
+}
