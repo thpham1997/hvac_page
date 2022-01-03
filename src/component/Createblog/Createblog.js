@@ -1,8 +1,9 @@
 import React, { useRef } from 'react'
 import { useState, useEffect } from "react";
 import { createPost } from "../../model";
-import ClassicEditor from '@ckeditor/ckeditor5-build-classic'
+// import ClassicEditor from '@ckeditor/ckeditor5-build-classic'
 import { CKEditor } from '@ckeditor/ckeditor5-react'
+import myCKEditor from 'ckeditor5-custom-build/build/ckeditor'
 import { useHistory } from "react-router";
 import axios from "axios";
 import { config } from 'dotenv'
@@ -51,8 +52,6 @@ export default function Createblog() {
   }
 
   const ckeditorConfig = {
-    // removePlugins: ['Blockquote', 'Image', 'List'],
-    toolbar: ['heading', '|', 'bold', 'italic', 'link', 'bulletedList', 'numberedList', 'blockQuote'],
     link: {
       defaultProtocol: 'http://',
       decorators: {
@@ -89,7 +88,7 @@ export default function Createblog() {
         <br /><br />
         <div className="form-createblog__group">
           <CKEditor
-            editor={ClassicEditor}
+            editor={myCKEditor}
             data={content}
             config={ckeditorConfig}
             onReady={editor => { console.log(editor) }}

@@ -7,7 +7,6 @@ import './_blog.scss';
 export default function Blog() {
   const { id } = useParams();
   const [blogData, setBlogData] = useState({});
-  const [paragraphs, setParagraphs] = useState({});
   const handleUpvote = async e => {
     let blog = await upvotePost(blogData.upvote + 1, id);
     setBlogData(blog);
@@ -34,23 +33,14 @@ export default function Blog() {
   useEffect(() => {
     getPost(id).then(res => {
       setBlogData(cur => cur = JSON.parse(JSON.stringify(res)));
-      console.log(blogData);
+      console.log(res);
     }, rej => {
       console.log(rej);
     }
     );
   }, [id])
 
-  // get text content of the blogs
-  useEffect(() => {
-    getPost(id).then(res => {
-      setParagraphs(cur => cur = JSON.parse(JSON.stringify(res.body)));
-      console.log(paragraphs);
-    }, rej => {
-      console.log(rej);
-    }
-    );
-  }, [id])
+
 
 
   return (
@@ -64,11 +54,7 @@ export default function Blog() {
         <span >{blogData.author && `Post by ${blogData.author.username}`} on {blogData.created__at}</span>
         <hr />
         <img src={blogData.avatar} alt="Blog Image"></img>
-        {Object.values(paragraphs).map((par, id) => {
-          return (
-            <p key={id} >{par}</p>
-          )
-        })}
+        <div className="blog__contents" dangerouslySetInnerHTML={{ __html: blogData.body }}></div>
         <hr />
         <div className="blog__control">
           <button

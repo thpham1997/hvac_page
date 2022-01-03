@@ -2,8 +2,13 @@
 
 # dependencies
 /node_modules
+
 /.pnp
 .pnp.js
+
+#CKEditor
+/CKEditor/ckeditor5-31.1.0-nuoorp94k5zd/node_modules
+/CKEditor/ckeditor5-31.1.0-nuoorp94k5zd/sample
 
 # testing
 /coverage
