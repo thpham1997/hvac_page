@@ -17,7 +17,7 @@
     text-decoration: none;
     color: black;
     text-transform: uppercase;
-    font-size: 1.5rem;
+    font-size: max(1.5rem, 3vw);
     font-weight: bolder;
     color: $mainColor;
     line-height: 4rem;
@@ -25,15 +25,17 @@
 
   &__list {
     display: flex;
-    column-gap: 2rem;
+    column-gap: max(0.5rem, 1.2vw);
     justify-content: flex-end;
-    width: 50%;
+    // width: max(50%, 40rem);
     color: $secondaryColor;
-    font-size: 1.1rem;
-    font-weight: bold;
+    font-weight: bold;  
     & li{
       list-style: none;
       & a{
+        font-size: min(1rem, 1.5vw);
+        display: block;
+        width: max-content;
         text-decoration: none;
         // color: black;
         color: $secondaryColor
@@ -55,7 +57,7 @@
   color: green;
 }
 
-@media screen and (max-width: 600px) {
+@media screen and (max-width: 640px) {
   .navBar {
     &__brandname {
       background-color: rgb(189, 223, 211);

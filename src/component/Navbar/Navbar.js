@@ -8,6 +8,7 @@ import './_navbar.scss'
 const Navbar = () => {
   const { pathname } = useLocation();
   const [isLoggedIn, setLoggedIn] = useState(false);
+  const history = useHistory();
 
   const navBarHandleClick = () => {
     document.querySelector(".navBar__list").classList.toggle("navBarListToggle");
@@ -15,7 +16,7 @@ const Navbar = () => {
       li.classList.toggle('liToggle');
       if (li.style.animation) {
         li.style.animationDelay = "";
-        console.log(li.style.animation);
+        // console.log(li.style.animation);
       } else {
         li.style.animationDelay = `${index / 5 + 0.3}s`;
       }
@@ -24,58 +25,37 @@ const Navbar = () => {
     console.log("run handle click");
   }
 
-  const DynamicSignup = ({ loggedIn }) => {
-    const { pathname } = useLocation();
-    const history = useHistory();
-
-    const handleSignout = () => {
-      localStorage.clear();
-      history.push('/');
-    }
-
-
-    if (loggedIn) {
-      return (
-        <>
-          <li className={pathname === "/create" ? "active" : ""}>
-            <Link to="/create">New Blog</Link>
-          </li>
-          <li className={pathname === "/signout" ? "active" : ""} onClick={handleSignout}>
-            <Link to="/signout">Sign out</Link>
-          </li>
-        </>
-      )
-    } else {
-      return (
-        <>
-          <li className={pathname === "/signup" ? "active" : ""}>
-            <Link to="/signup">Sign up</Link>
-          </li>
-          <li className={pathname === "/signin" ? "active" : ""}>
-            <Link to="/signin">Sign in</Link>
-          </li>
-        </>
-      )
-    }
-  }
   // Add event for menu
-  // the bavBarHandleClick run many times?
   useEffect(() => {
     const navBarButton = document.querySelector('.navBar svg');
-    console.log(navBarButton.getAttribute('listener'));
-    if (navBarButton.getAttribute('listener')) navBarButton.removeEventListener("click", navBarHandleClick);
     navBarButton.addEventListener("click", navBarHandleClick)
     console.log('run effect');
-  }, [localStorage.getItem('userId') ? true : false])
+  }, [])
+
+  useEffect(() => {
+    document.querySelector(".navBar__list").classList.remove("navBarListToggle");
+    document.querySelectorAll(".navBar__list li").forEach((li, index) => {
+      li.classList.remove('liToggle');
+    })
+  }, [isLoggedIn])
 
   // update the loggedIn status every time user log in or log out
   useEffect(() => {
-    let test = localStorage.getItem('userId') ? true : false;
-    setLoggedIn(test);
+    let loggedIn = localStorage.getItem('userId') ? true : false;
+    setLoggedIn(loggedIn);
     console.log(isLoggedIn);
   }, [localStorage.getItem('userId')])
 
-  
+  // navBar switching between mode
+  useEffect(() => {
+    if (window.innerWidth < 641) {
+      console.log(window.innerWidth);
+    } else {
+      console.log(window.innerWidth);
+    }
+  }, [isLoggedIn])
+
+
   function handleClick() {
     window.scroll({
       top: 0,
@@ -83,6 +63,12 @@ const Navbar = () => {
       behavior: 'smooth'
     })
   }
+
+  function handleSignOut() {
+    localStorage.clear();
+    history.push('/');
+  }
+
   return (
     <div className='navBar'>
       <Link className="navBar__brandname" to='/' onClick={handleClick}>HVAC Blog</Link>
@@ -92,8 +78,10 @@ const Navbar = () => {
         <li className="navBar__services" ><Link to="/services" onClick={handleClick}>Services</Link></li>
         <li className="navBar__works" ><Link to="/works" onClick={handleClick}>Works</Link></li>
         <li className="navBar__blogs" ><Link to="/blogs" onClick={handleClick}>Blogs</Link></li>
-        <li className="navBar__signin" ><Link to="/signin" onClick={handleClick}>Sign In</Link></li>
-        <li className="navBar__signup" ><Link to="/signup" onClick={handleClick}>Sign Up</Link></li>
+        {!isLoggedIn ? (<><li className="navBar__signin" ><Link to="/signin" onClick={handleClick}>Sign In</Link></li>
+          <li className="navBar__signup" ><Link to="/signup" onClick={handleClick}>Sign Up</Link></li></>) : (<><li className="navBar__create" ><Link to="/create" onClick={handleClick}>Create</Link></li>
+            <li className="navBar__signout" ><Link to="/" onClick={handleSignOut}>Sign Out</Link></li></>)}
+
       </ul>
       <FontAwesomeIcon icon={faBars} />
     </div>
