@@ -32,74 +32,32 @@
     }
   }
 
-  &__topicShortcut {
-    display: grid;
-    grid-template-columns: repeat(1, 1fr);
-    row-gap: 2rem;
-    margin-top: 2rem;
-    place-items: center;
-    .shortcut {
-      display: grid;
-      grid-template-columns: 1fr 2fr;
-      column-gap: 1rem;
-      background-color: rgba(0, 0, 0, 0.1);
-      border-radius: 1rem;
-      box-shadow: 1px 1px 5px 1px rgba(0, 0, 0, 0.1);
-      width: 45rem;
-      height: 15rem;
-      overflow: hidden;
-      img {
-        background-repeat: no-repeat;
-        background-position: center;
-        background-size: cover;
-        width: 14rem;
-        height: inherit;
-      }
-      a {
-        padding: 0.5rem;
-        text-decoration: none;
-        color: black;
-        display: grid;
-        grid-template-rows: 3fr 7fr;
-        h1 {
-          text-decoration: underline;
-          font-size: 1.3rem;
-          font-family: "Varela Round", sans-serif;
-          &::first-letter {
-            font-size: 3rem;
-            font-weight: bold;
-          }
-        }
-        p {
-          color: hsl(0, 0%, 30%);
-          font-size: 1.1rem;
-        }
-      }
-    }
-  }
-
   &__intro {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    column-gap: 10rem;
+    // display: grid;
+    // grid-template-columns: repeat(2, 1fr);
+    // column-gap: 10rem;
+    display: flex;
+    flex-direction: row;
+    column-gap: 2rem;
     padding: 0rem 5rem;
     margin-top: 20vh;
   }
   &__introText {
-    width: 100%;
+    // width: 100%;
+    flex-grow: 2;
     & h2 {
-      font-size: 2.5rem;
+      font-size: max(2.5rem,2vw);
       font-weight: bolder;
       color: #2c234d;
     }
     & p {
-      font-size: 1.2rem;
-      margin-top: 2rem;
+      font-size: max(1.2rem,1vw);
+      margin-top: 3%;
       color: #4d4a58;
     }
     & p:nth-child(2) {
-      font-size: 1.5rem;
-      margin-top: 4rem;
+      font-size: max(1.5rem,1vw);
+      margin-top: 4%;
       font-weight: bold;
       color: #2c234d;
     }
@@ -132,10 +90,12 @@
     }
   }
   &__introImg {
+    display: block;
+    position: relative;
     & > img {
       display: block;
-      // width: 70%;
-      height: 80vh;
+      width: 100%;
+      // height: max(80%, 40rem);
       object-fit: cover;
       z-index: 0;
       margin-left: auto;
@@ -146,20 +106,22 @@
     background-color: $mainColor;
     color: #fff;
     position: absolute;
+    display: block;
     z-index: 1;
-    width: 20rem;
-    height: 12rem;
-    transform: translate(-15%, -200%);
-    padding: 2rem;
+    width: 90%;
+    // height: 7%;
+    top: 50%;
+    left: -2rem;
+    padding: 1rem;
     border-radius: 0.5rem;
     box-shadow: 1px 5px 5px rgba(0, 0, 0, 0.1);
     & > h2 {
-      font-size: 1.4rem;
+      font-size: max(1.4rem, 2vw);
       font-weight: bold;
     }
     & > p {
       margin-top: 0.8rem;
-      font-size: 1rem;
+      font-size: max(1rem, 1vw);
     }
   }
 
@@ -313,7 +275,7 @@
     & .singleMember {
       z-index: 0;
       position: relative;
-      &__img{
+      &__img {
         overflow: hidden;
       }
       & img {
@@ -321,7 +283,7 @@
         object-fit: cover;
         transition: all ease-out 0.4s;
       }
-      & img:hover{
+      & img:hover {
         transform: rotate(1deg) scale(1.1);
       }
 
@@ -339,6 +301,26 @@
           font-size: 1.5rem;
         }
       }
+    }
+  }
+}
+
+@media screen and (max-width: 640px) {
+  .mainPage {
+    &__intro {
+      padding: 0.5rem;
+      flex-direction: column;
+      row-gap: 3rem;
+    }
+    &__introImg {
+      & > img {
+        height: 60vh;
+      }
+    }
+
+    &__introCard {
+      left: 2rem;
+      width: 90%;
     }
   }
 }
