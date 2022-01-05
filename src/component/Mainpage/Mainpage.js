@@ -1,7 +1,6 @@
 import React from 'react';
 import './_mainpage.scss'
 import Backgroundheader from './BackgroundHeader'
-import Topicshortcut from './TopicShortcut';
 import Introduce from './Introduce';
 import OurWork from './OurWork';
 import Members from './Members';
