@@ -2,7 +2,6 @@
   $mainColor: #f27420;
   $secondaryColor: #2c234d;
 
-
   position: fixed;
   z-index: 1;
   display: flex;
@@ -22,23 +21,28 @@
     color: $mainColor;
     line-height: 4rem;
   }
-
+  
   &__list {
     display: flex;
     column-gap: max(0.5rem, 1.2vw);
     justify-content: flex-end;
     // width: max(50%, 40rem);
     color: $secondaryColor;
-    font-weight: bold;  
-    & li{
+    font-weight: bold;
+    & li {
       list-style: none;
-      & a{
-        font-size: min(1rem, 1.5vw);
+      &:hover {
+        background-color: #f2742048;
+      }
+      & a {
+        font-size: min(1rem, 1.8vw);
+        line-height: 3rem;
+        padding: auto 0.5rem;
         display: block;
         width: max-content;
         text-decoration: none;
         // color: black;
-        color: $secondaryColor
+        color: $secondaryColor;
       }
     }
   }
@@ -94,25 +98,26 @@
     }
   }
 
-  .navBarListToggle{
+  .navBarListToggle {
     transform: translateX(0%);
   }
 }
 
-.liToggle{
-    animation-name: listAnimation;
-    animation-duration: 0.3s;
-    animation-iteration-count: 1;
-    animation-direction: normal;
-    animation-timing-function: ease-in;
-    animation-fill-mode: forwards;
+.liToggle {
+  animation-name: listAnimation;
+  animation-duration: 0.3s;
+  animation-iteration-count: 1;
+  animation-direction: normal;
+  animation-timing-function: ease-in;
+  animation-fill-mode: forwards;
 }
 
-@keyframes listAnimation{
-  from{
+@keyframes listAnimation {
+  from {
     transform: translateX(50px);
     opacity: 0;
-  }to{
+  }
+  to {
     transform: translateX(0);
     opacity: 1;
   }
