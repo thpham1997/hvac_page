@@ -35,8 +35,23 @@
     margin-bottom: 40vh;
     padding: 0rem 10rem;
     position: relative;
-    display: grid;
-    grid-template-columns: 1fr;
-    row-gap: 3rem;
+    display: flex;
+    flex-wrap: wrap;
+    flex-grow: 2;
+    gap: 1rem 1rem;
+  }
+}
+@media screen and(max-width: 640px) {
+  .blogsPage {
+    &__reviews {
+      padding: 5vw;
+    }
+  }
+}
+@media screen and(max-width: 930px) and (min-width: 641px) {
+  .blogsPage {
+    &__reviews {
+      padding: 5vw;
+    }
   }
 }

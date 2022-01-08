@@ -16,10 +16,10 @@ export default function Blogreview({ id, title, author, avatar, upvote, downvote
           <button onClick={() => { alert('View this blog to upvote it') }}>
             <FontAwesomeIcon icon={faThumbsUp} />
           </button> {upvote}
-          {/* <span style={{ margin: "10px" }}></span> */}
+          <span style={{ margin: "10px" }}></span>
           <button onClick={() => { alert('View this blog to downvote it') }}>
             <FontAwesomeIcon icon={faThumbsDown} />
-          </button>{downvote}
+          </button> {downvote}
         </div>
         <Link to={`/blogs/${id}`} className="blogreview__link">Read blog</Link>
       </div>
