@@ -46,14 +46,6 @@ const Navbar = () => {
     console.log(isLoggedIn);
   }, [localStorage.getItem('userId')])
 
-  // navBar switching between mode
-  useEffect(() => {
-    if (window.innerWidth < 641) {
-      console.log(window.innerWidth);
-    } else {
-      console.log(window.innerWidth);
-    }
-  }, [isLoggedIn])
 
 
   function handleClick() {
@@ -61,6 +53,10 @@ const Navbar = () => {
       top: 0,
       left: 0,
       behavior: 'smooth'
+    })
+    document.querySelector(".navBar__list").classList.remove("navBarListToggle");
+    document.querySelectorAll(".navBar__list li").forEach((li, index) => {
+      li.classList.remove('liToggle');
     })
   }
 
