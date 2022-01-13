@@ -14,12 +14,12 @@ export default function Workpage(props) {
         </div>
         <div className='singleWork__caption1'>
           <span>{order > 9 ? order + '.' : '0' + order + '.'}</span>
-          <h2>Esse id non anim.</h2>
+          <h2>{props.title}</h2>
         </div>
         <div className='singleWork__caption2'>
           <span>{order > 9 ? order + '.' : '0' + order + '.'}</span>
-          <h2>Excepteur laborum.</h2>
-          <p>Aliqua anim duis cillum esse labore eu enim aliqua cupidatat deserunt.</p>
+          <h2>{props.title}</h2>
+          <p>{props.descripton}</p>
           <Link to='#'>Read more</Link>
         </div>
       </div>
@@ -39,14 +39,27 @@ export default function Workpage(props) {
     <div className='workPage'>
       <HeaderImg parentName='workPage' ></HeaderImg>
       <div className='workPage__works'>
-        <Work order={1} source={project1}></Work>
-        <Work order={2} source={project2}></Work>
-        <Work order={3} source={project1}></Work>
-        <Work order={4} source={project2}></Work>
-        <Work order={5} source={project1}></Work>
-        <Work order={6} source={project2}></Work>
-        <Work order={7} source={project1}></Work>
-        <Work order={8} source={project2}></Work>
+      <Work order={1} source={project1}
+      title='Heating'
+      descripton='Proident Lorem eiusmod laborum consectetur irure in consectetur Lorem esse quis.'></Work>
+      <Work order={2} source={project2}
+      title='Air Conditioning'
+      descripton='Proident Lorem eiusmod laborum consectetur irure in consectetur Lorem esse quis.'></Work>
+      <Work order={3} source={project1}
+      title='Bath Remodeling'
+      descripton='Proident Lorem eiusmod laborum consectetur irure in consectetur Lorem esse quis.'></Work>
+      <Work order={4} source={project2}
+      title='Plumbing'
+      descripton='Proident Lorem eiusmod laborum consectetur irure in consectetur Lorem esse quis.'></Work>
+      <Work order={5} source={project2}
+      title='Electrical'
+      descripton='Proident Lorem eiusmod laborum consectetur irure in consectetur Lorem esse quis.'></Work>
+      <Work order={6} source={project2}
+      title='Build&Structure'
+      descripton='Proident Lorem eiusmod laborum consectetur irure in consectetur Lorem esse quis.'></Work>
+      <Work order={7} source={project2}
+      title='Engineer Consultant'
+      descripton='Proident Lorem eiusmod laborum consectetur irure in consectetur Lorem esse quis.'></Work>
       </div>
     </div>
   )

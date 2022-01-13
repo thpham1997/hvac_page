@@ -31,18 +31,15 @@
   }
 
   &__intro {
-    // display: grid;
-    // grid-template-columns: repeat(2, 1fr);
-    // column-gap: 10rem;
+    position: relative;
     display: flex;
     flex-direction: row;
-    column-gap: 2rem;
-    padding: 0rem 5rem;
+    gap: 1vw;
+    padding-inline: min(5rem, 6vw);
     margin-top: 20vh;
   }
   &__introText {
-    // width: 100%;
-    flex-grow: 2;
+    flex: 1 2 auto;
     & h2 {
       font-size: max(1.5rem, 2.5vw);
       font-weight: bolder;
@@ -51,6 +48,7 @@
     & p {
       font-size: max(1rem, 1.2vw);
       margin-top: 3%;
+      line-height: 110%;
       color: #4d4a58;
     }
     & p:nth-child(2) {
@@ -91,10 +89,10 @@
   &__introImg {
     display: block;
     position: relative;
+    flex: 2 1 auto;
     & > img {
       display: block;
       width: 100%;
-      // height: max(80%, 40rem);
       object-fit: cover;
       z-index: 0;
       margin-left: auto;
@@ -108,9 +106,8 @@
     display: block;
     z-index: 1;
     width: 90%;
-    // height: 7%;
     top: 50%;
-    left: -2rem;
+    left: -1vw;
     padding: 1rem;
     border-radius: 0.5rem;
     box-shadow: 1px 5px 5px rgba(0, 0, 0, 0.1);
@@ -128,8 +125,8 @@
   &__members {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    column-gap: 1%;
-    row-gap: 1%;
+    gap: 1vw;
+    padding-inline: min(5rem, 6vw);
     // padding: 5rem 5rem;
     margin-top: 20vh;
     margin-bottom: 40vh;
@@ -228,14 +225,6 @@
     &__introCard {
       left: 2rem;
       width: 90%;
-    }
-
-    &__works {
-      grid-template-columns: repeat(2, 1fr);
-    }
-
-    &__members {
-      grid-template-columns: repeat(2, 1fr);
     }
   }
 }

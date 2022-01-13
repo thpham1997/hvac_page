@@ -32,7 +32,7 @@
 
   &__body {
     margin-top: 40vh;
-    padding: 0 5rem;
+    padding: 0 min(5rem, 2vw);
     & * {
       margin: 0 auto;
     }
@@ -59,18 +59,19 @@
   &__contents {
     & p {
       padding: 0.5rem;
-      font-size: 1.1rem;
-      line-height: 1.2rem;
-      width: min(50vw, 50rem);
+      width: min(100%, 50rem);
       text-indent: 2rem;
       text-align: justify;
-      color: #333;
       margin-top: 1.5rem;
       border-radius: 0.2rem;
-      background-color: rgba(0, 0, 0, 0.1);
+      line-height: 120%;
+      // background-color: rgba(255, 255, 255, 0.1);
+      span{
+        padding: 0.5rem;
+      }
     }
     & h1, h2, h3{
-      width: min(50vw, 50rem);
+      // width: min(50vw, 50rem);
       margin-top: 2rem;
       border-radius: 0.2rem;
       padding: 0.5rem;
@@ -107,7 +108,7 @@
 
     & p {
       display: inline;
-      margin: auto 2rem;
+      margin: auto min(2rem, 1vw);
       font-size: 1.5rem;
       line-height: 1.8rem;
       font-style: italic;

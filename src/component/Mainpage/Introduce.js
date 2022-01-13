@@ -6,17 +6,16 @@ export default function Introduce(props) {
   return (
     <div className={`${props.parentName}__intro`}>
       <div className={`${props.parentName}__introText`}>
-        <h2>This is a slogan: Ipsum culpa magna irure.</h2>
-        <p>This is an introduction1: Lorem esse nulla elit consectetur elit excepteur aliqua pariatur.</p>
-        <p>This is an introduction2: Lorem esse nulla elit consectetur elit excepteur aliqua pariatur.</p>
-        <p>This is an introduction3: Lorem esse nulla elit consectetur elit excepteur aliqua pariatur.</p>
-        <Link to="/">Our Service</Link>
+        <h2>Your satisfaction is Our responsibility </h2>
+        <p>This will be your best choice when you come to us</p>
+        <p>Welcome to  HVACGROUPMD. - Heating and Cooling ; experts in heating and air conditioning repair in Maryland, While over forty years in the air conditioning business,  HVACGROUPMD Services. - Heating and Cooling has worked hard to earn a reputation of being an outstanding full-service HVAC business, providing unmatched air conditioning troubleshooting, ac repair and air conditioner installation in Maryland.</p>
+        <Link to="/services">Our Service</Link>
       </div>
       <div className={`${props.parentName}__introImg`}>
         <img src={worker} alt='woker Image'></img>
         <div className={`${props.parentName}__introCard`}>
           <h2>Our Mission</h2>
-          <p>Adipisicing pariatur ea eu. Deserunt cupidatat cillum voluptate est pariatur pariatur ex labore laborum eu est tempor do.</p>
+          <p>HVACGROUPMD. - Heating and Cooling has worked hard to earn a reputation of being an outstanding full-service HVAC business, providing unmatched air conditioning troubleshooting, ac repair and air conditioner installation in MD, VA, DC... </p>
         </div>
       </div>
     </div>

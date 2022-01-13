@@ -33,6 +33,8 @@
   &__services {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
+    gap: 1vw;
+    padding-inline: min(5rem, 6vw);
     margin-top: 40vh;
     margin-bottom: 40vh;
   }

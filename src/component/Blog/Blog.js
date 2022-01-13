@@ -8,13 +8,21 @@ export default function Blog() {
   const { id } = useParams();
   const [blogData, setBlogData] = useState({});
   const handleUpvote = async e => {
-    let blog = await upvotePost(blogData.upvote + 1, id);
-    setBlogData(blog);
+    if (localStorage.getItem("userId")) {
+      let blog = await upvotePost(blogData.upvote + 1, id);
+      setBlogData(blog);
+    }else{
+      alert("Please sign in to do this!");
+    }
   }
 
   const handleDownvote = async e => {
-    let blog = await downvotePost(blogData.downvote + 1, id);
-    setBlogData(blog);
+    if (localStorage.getItem("userId")) {
+      let blog = await downvotePost(blogData.upvote + 1, id);
+      setBlogData(blog);
+    }else{
+      alert("Please sign in to do this!");
+    }
   }
 
   function HeaderImg(props) {

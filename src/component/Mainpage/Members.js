@@ -23,7 +23,7 @@ export default function Members(props) {
       <div className='description'>
         <h2>Qui culpa pariatur ullamco</h2>
         <p>Duis sint veniam labore esse commodo. Adipisicing eiusmod cillum laborum laborum ipsum duis minim aliquip dolor do incididunt. Consequat quis nisi anim cillum ad. Nulla laboris sint consequat minim aute non anim voluptate sint quis ex esse adipisicing.</p>
-        <Link to='\contact'>Contact Us</Link>
+        <Link to='#'>Contact Us</Link>
       </div>
     )
   }
